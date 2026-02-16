@@ -1,0 +1,20 @@
+Dependencies:
+
+- [pytorch](https://pytorch.org) <3
+- [numpy](https://numpy.org/install/) <3
+-  `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints)
+-  `datasets` for huggingface datasets <3 (if you want to download + preprocess OpenWebText)
+-  `tiktoken` for OpenAI's fast BPE code <3
+-  `wandb` for optional logging <3
+-  `tqdm` for progress bars <3
+
+## todos
+
+- Investigate and add FSDP instead of DDP
+- Eval zero-shot perplexities on standard evals (e.g. LAMBADA? HELM? etc.)
+- Finetune the finetuning script, I think the hyperparams are not great
+- Schedule for linear batch size increase during training
+- Incorporate other embeddings (rotary, alibi)
+- Separate out the optim buffers from model params in checkpoints I think
+- Additional logging around network health (e.g. gradient clip events, magnitudes)
+- Few more investigations around better init etc.
